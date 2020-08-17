@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.marvel__header-logo {
+  background-color: rgb(32, 32, 32);
+}
+
+.marvel__header {
+  width: 100%;
+  height: 300px;
+  background-image: url("https://terrigen-cdn-dev.marvel.com/content/prod/1x/characters_art_mas_mob_01.jpg");
+}
+
+.marvel__title {
+  background-color: rgb(32, 32, 32);
+  color: white;
+  margin: 0;
+  height: 3rem;
+  padding-top: .6rem;
+}
+
+.marvel__characters {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-between;
+  justify-content: center;
+
+}
+
+.character {
+  background-color: rgb(21, 21, 21);
+  color: rgb(213, 59, 53);
+  margin: 5rem;
+  position: relative;
+}
+
+.character:hover .character__description {
+  display: block;
+  background-color: rgba(32, 32, 32, 0.7);
+  z-index: 2;
+}
+
+.character__name {
+  font-weight: bold;
+}
+
+.character__description {
+  display: none;
+  position: absolute;
+  top: 0;
+  color: white;
+  width: 271px;
+  height: auto;
+  min-height: 200px;
+  left: -54px;
+}
