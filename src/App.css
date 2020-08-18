@@ -1,3 +1,10 @@
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   text-transform: uppercase;
@@ -32,22 +39,94 @@
 }
 
 .character {
-  background-color: rgb(21, 21, 21);
-  color: rgb(213, 59, 53);
+  color: white;
   margin: 5rem;
   position: relative;
+  overflow: hidden;
 }
 
-.character:hover .character__description {
+.img-wrapper {
+  background: #e62429;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  z-index: 2;
+}
+
+.img-wrapper:hover {
+  cursor: pointer;
+}
+
+.img-wrapper::after {
+  height: 4px;
+  content: "";
+  background-color: #e62429;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.character__name {
+  background: none;
+  border: none;
+  color: inherit;
+  height: 145px;
+  position: relative;
+  vertical-align: middle;
+  z-index: 30;
+}
+
+
+.character__show {
+  z-index: 30;
+}
+
+.character:hover .background {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  cursor: pointer;
+}
+
+.background {
+  background: #e62429;
+  bottom: 100%;
+  content: "";
+  align-content: center;
+  color: white;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  -webkit-transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+  transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  width: 100%;
+  z-index: -2;
+}
+
+.background::after {
+  background: #151515;
+  top: 100%;
+  content: "";
+  align-content: center;
+  color: white;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+  transition: transform .3s;
+  width: 100%;
+  z-index: 2;
+}
+
+/* .character:hover .character__description {
   display: block;
   background-color: rgba(32, 32, 32, 0.7);
   z-index: 2;
 }
-
-.character__name {
-  font-weight: bold;
-}
-
 .character__description {
   display: none;
   position: absolute;
@@ -57,4 +136,4 @@
   height: auto;
   min-height: 200px;
   left: -54px;
-}
+}*/

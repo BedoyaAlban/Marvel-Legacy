@@ -4,7 +4,7 @@ import Characters from "../Characters";
 
 const CaptainAmerica = () => {
   const [characters, setCharacters] = useState([]);
-
+  console.log(characters);
   useEffect(() => {
     const key = process.env.REACT_APP_APIKEY;
     const hash = md5(key);
